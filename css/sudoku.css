@@ -1,0 +1,33 @@
+table {
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+	margin-top: 30px;
+	font-size: 30px;
+}
+
+
+.sudoku div{
+	text-align: center;
+}
+.sudoku input {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.sudoku button {
+	margin-top: 20px;
+}
+
+td.boundary {
+	background-color: #555;
+}
+
+td.boundary-horizontal {
+	height: 5px;
+}
+
+td.boundary-vertical {
+	width: 5px;
+}
