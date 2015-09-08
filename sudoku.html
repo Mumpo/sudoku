@@ -5,17 +5,10 @@
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-
 	<!-- JQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 	<!-- Latest compiled and minified JavaScript (MUST PRECEDE JQUERY)-->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	<meta charset="UTF-8">
 	<title>Sudoku Solver</title>
 
@@ -26,7 +19,7 @@
 </head>
 	
 <body>
-	<nav class="navbar navbar-default navbar-static-top">
+	<!--nav class="navbar navbar-default navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -38,10 +31,298 @@
 				<a class="navbar-brand">Sudoku Solver</a>
 			</div>
 
-		</div> <!-- Container fluid -->
+		</div>
+	</nav-->
+	<nav>
+		<ul>
+			<li>
+				<a onClick="runSudoku()">SOLVE!</a>
+			</li>
+		</ul>
 	</nav>
-	<div class="sudoku">
-		<div class="container">
+	<div id="sudoku">
+		<div class="row">
+			<div class="cell">
+				<input id="input_0_0" class="cell-input" autofocus></input>
+			</div>
+			<div class="cell">
+				<input id="input_0_1" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_0_2" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_0_3" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_0_4" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_0_5" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_0_6" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_0_7" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_0_8" class="cell-input"></input>
+			</div>
+		</div>
+		<div class="row">
+			<div class="cell">
+				<input id="input_1_0" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_1_1" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_1_2" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_1_3" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_1_4" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_1_5" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_1_6" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_1_7" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_1_8" class="cell-input"></input>
+			</div>
+		</div>
+		<div class="row">
+			<div class="cell">
+				<input id="input_2_0" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_2_1" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_2_2" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_2_3" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_2_4" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_2_5" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_2_6" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_2_7" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_2_8" class="cell-input"></input>
+			</div>
+		</div>
+		<div class="separator-horizontal"></div>
+		<div class="row">
+			<div class="cell">
+				<input id="input_3_0" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_3_1" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_3_2" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_3_3" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_3_4" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_3_5" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_3_6" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_3_7" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_3_8" class="cell-input"></input>
+			</div>
+		</div>
+		<div class="row">
+			<div class="cell">
+				<input id="input_4_0" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_4_1" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_4_2" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_4_3" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_4_4" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_4_5" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_4_6" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_4_7" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_4_8" class="cell-input"></input>
+			</div>
+		</div>
+		<div class="row">
+			<div class="cell">
+				<input id="input_5_0" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_5_1" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_5_2" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_5_3" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_5_4" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_5_5" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_5_6" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_5_7" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_5_8" class="cell-input"></input>
+			</div>
+		</div>
+		<div class="separator-horizontal"></div>
+		<div class="row">
+			<div class="cell">
+				<input id="input_6_0" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_6_1" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_6_2" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_6_3" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_6_4" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_6_5" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_6_6" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_6_7" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_6_8" class="cell-input"></input>
+			</div>
+		</div>
+		<div class="row">
+			<div class="cell">
+				<input id="input_7_0" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_7_1" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_7_2" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_7_3" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_7_4" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_7_5" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_7_6" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_7_7" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_7_8" class="cell-input"></input>
+			</div>
+		</div>
+		<div class="row">
+			<div class="cell">
+				<input id="input_8_0" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_8_1" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_8_2" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_8_3" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_8_4" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_8_5" class="cell-input"></input>
+			</div>
+			<div class="separator-vertical"></div>
+			<div class="cell">
+				<input id="input_8_6" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_8_7" class="cell-input"></input>
+			</div>
+			<div class="cell">
+				<input id="input_8_8" class="cell-input"></input>
+			</div>
+		</div>
+		<!--div class="container">
 			<div class="row">
 				<h2 style="display: inline">Size: </h2><h3 id="sudoku_size" style="display: inline">3</h3>
 			</div> 
@@ -199,7 +480,46 @@
 					<button type="button" class="btn btn-primary btn-lg" onClick="runSudoku();">Solve!</buton>
 				</div>
 			</div>
-		</div>
+		</div-->
 	</div>
 </body>
+
+<script type="text/javascript">
+
+function resize_sudoku() {
+	var width = $(window).width();
+	var height = $(window).height();
+	var size = Math.min(width, height);
+	$('#sudoku').css('height', size);
+	$('#sudoku').css('width', size);
+	$(".cell-input").css('font-size', size/20);
+}
+
+$(document).ready(resize_sudoku);
+$(window).resize(resize_sudoku);
+
+$(document).keydown(function(e) {
+	var focused = $(':focus');
+    switch(e.which) {
+        case 37: // left
+        	focused.focusout();
+        	focused.prev().focus();
+        	alert(focused.id);
+        	break;
+
+        case 38: // up
+        	break;
+
+        case 39: // right
+        	break;
+
+        case 40: // down
+        	break;
+
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+});
+
+</script>
 </html>

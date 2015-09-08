@@ -1,6 +1,23 @@
+@font-face {
+    font-family: Rocko;
+    src: url(fonts/RockoFLF.ttf);
+}
+
+
+html, body {
+	height: 100%;
+}
+
+#sudoku {
+	height: 100%;
+	padding: 8%;
+	font-size: 9%;
+}
+
+/*
 table {
 	width: 400px;
-	height: 400px;
+	height: 100%;
 	margin: 0 auto;
 	margin-top: 30px;
 	font-size: 30px;
@@ -30,4 +47,52 @@ td.boundary-horizontal {
 
 td.boundary-vertical {
 	width: 5px;
+}*/
+
+body {
+	background-color: #2C3E50;
+}
+
+.row {
+	height: 9%;
+}
+
+.cell {
+	width: 9%;
+	height: 100%;
+	float: left;
+	background-color: #F2F1EF;
+	outline-color: #BDC3C7;
+	outline-style: solid;
+}
+
+.separator-horizontal {
+	padding-top: 1%;
+}
+
+.separator-vertical {
+	width: 1%;
+	float: left;
+	height: 100%;
+}
+
+input.cell-input {
+	height: 100%;
+    width: 100%;
+    background: transparent;
+    border-style: none;
+    text-align: center;
+    font-family: Rocko;
+}
+
+input.cell-input:focus {
+	background-color: #FDE3A7;
+}
+
+nav {
+	background-color: #fff;
+}
+
+nav > ul {
+	list-style-type: none;
 }

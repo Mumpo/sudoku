@@ -267,7 +267,7 @@ sudoku.prototype.solve = function() {
 }
 
 function runSudoku() {
-	var size = parseInt(document.getElementById("sudoku_size").innerHTML);
+	var size = 3;
 	var inputs = [];
 
 	var su = new sudoku(size);
